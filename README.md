@@ -1,2 +1,3 @@
 # CadastroInstalacao
- Cadastrar Instalação com Django
+ Cadastrar Instalações com Django
+ 

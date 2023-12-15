@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .metragem import *
+from .models import Instalacao
 
 # Create your views here.
 def home(request):
@@ -19,6 +20,37 @@ def pedido_cadastrados(request):
                 metragem = valores[0]
                 valor_unitario = valores[1]
                 valor_total = valores[2]
+        valores = request.POST.get('metragem_fracionaro')
+        if valores != 0:
+            valores = list(metragem_adicionadas(float(valores)))
+            for valor in valores:
+                metragem = valores[0]
+                valor_unitario = valores[1]
+                valor_total = valores[2]
+        valores = request.POST.get('metragem_wave')
+        if valores != 0:
+            valores = list(wave(float(valores)))
+            for valor in valores:
+                metragem = valores[0]
+                valor_unitario = valores[1]
+                valor_total = valores[2]
+        valores = request.POST.get('taxa')
+        if valores != 0:
+            valores = list(metragem_taxa(float(valores)))
+            for valor in valores:
+                metragem = valores[0]
+                valor_unitario = valores[1]
+                valor_total = valores[2]
 
-        print(f'Pedido: {pedido} Vendedor: {vendedor} metragem: {metragem} valor unitario: {valor_unitario} valor Total: {valor_total} ')
+        # Salvar instalação no Banco de dados
+        cadastro_instalacao = Instalacao()
+        cadastro_instalacao.pedido = pedido
+        cadastro_instalacao.vendedor = vendedor
+        cadastro_instalacao.metragem = metragem
+        cadastro_instalacao.valor_unitario = valor_unitario
+        cadastro_instalacao.valor_total = valor_total
+        cadastro_instalacao.save()
+
+        # Exibir todos as instalação em nova pagina
+
         return  HttpResponse("Estou Aqui!")

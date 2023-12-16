@@ -1,0 +1,22 @@
+<div class="container">
+	<table>
+		<tr>
+			<th>Itêm</th>
+			<th>Pedido</th>
+			<th>Vendedor</th>
+			<th>Metragens</th>
+			<th>Valor Unitário</th>
+			<th>Valor Total</th>
+		</tr>
+		{% for instalacao in instalacoes_cadastradas %}
+		<tr>
+			<th>{{instalacao.id_instalacoes}}</th>
+			<th>{{instalacao.pedido}}</th>
+			<th>{{instalacao.vendedor}}</th>
+			<th>{{instalacao.metragem}}</th>
+			<th>{{instalacao.valor_unitario}}</th>
+			<th>{{instalacao.valor_total}}</th>
+		</tr>
+		{% endfor %}
+	</table>
+</div>

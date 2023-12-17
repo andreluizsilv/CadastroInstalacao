@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2 class="mb-4">Cadastro Confirmado</h2>
+        <p><strong>Pedido:</strong> {{ pedido }}</p>
+        <p><strong>Vendedor:</strong> {{ vendedor }}</p>
+        <p><strong>Metragem:</strong> {{ metragem }}</p>
+        <p><strong>Valor Unitário:</strong> {{ valor_unitario }}</p>
+        <p><strong>Valor Total:</strong> {{ valor_total }}</p>
+
+        <form action="{% url 'cadastro_confirmados' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="pedido" value="{{ pedido }}">
+            <input type="hidden" name="vendedor" value="{{ vendedor }}">
+            <input type="hidden" name="metragem" value="{{ metragem }}">
+            <input type="hidden" name="valor_unitario" value="{{ valor_unitario }}">
+            <input type="hidden" name="valor_total" value="{{ valor_total }}">
+
+            <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+        </form>
+    </div>
+{% endblock %}

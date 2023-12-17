@@ -6,7 +6,7 @@ VALOR_UNITARIO_4 = 22.89
 VALOR_UNITARIO_5 = 21.97
 
 
-def metragens(metragem):
+def calculate_metragens(metragem):
     if metragem < 1.99:
         valor_unitario = VALOR_UNITARIO_1
         valor_total = VALOR_UNITARIO_1
@@ -21,17 +21,17 @@ def metragens(metragem):
     valor_total = metragem * valor_unitario
     return metragem, valor_unitario, valor_total
 
-def metragem_adicionadas(metragem):
+def calculate_metragem_adicionadas(metragem):
     valor_unitario = VALOR_UNITARIO_2
     valor_total = metragem * valor_unitario
     return metragem, valor_unitario, valor_total
 
-def metragem_taxa(taxa):
+def calculate_metragem_taxa(taxa):
     metragem = 0
     valor_unitario = taxa
     valor_total = taxa
     return metragem, valor_unitario, valor_total
 
-def wave(metragem):
+def calculate_wave(metragem):
     valor_total = metragem * VALOR_UNITARIO_5
     return metragem, VALOR_UNITARIO_5, valor_total

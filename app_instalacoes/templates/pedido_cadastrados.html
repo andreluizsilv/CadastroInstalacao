@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2>Instalações Cadastradas</h2>
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Pedido</th>
+                    <th scope="col">Vendedor</th>
+                    <th scope="col">Metragens</th>
+                    <th scope="col">Valor Unitário</th>
+                    <th scope="col">Valor Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for instalacao in cadastros %}
+                    <tr>
+                        <th scope="row">{{ instalacao.id_instalacoes }}</th>
+                        <td>{{ instalacao.pedido }}</td>
+                        <td>{{ instalacao.vendedor }}</td>
+                        <td>{{ instalacao.metragem }}</td>
+                        <td>{{ instalacao.valor_unitario }}</td>
+                        <td>{{ instalacao.valor_total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+	</div>
+	
+{% endblock %}

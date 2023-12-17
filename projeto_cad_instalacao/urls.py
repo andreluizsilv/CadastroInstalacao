@@ -20,6 +20,9 @@ from app_instalacoes import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home, name='home' ),
-    path('cadastros/', views.pedido_cadastrados, name='pedido_cadastrados')
+    path('', views.home, name='home'),
+    path('cadastros/', views.pedido_cadastrados, name='pedido_cadastrados'),
+    path('cadastro_confirmados/', views.salvar_cadastro, name='cadastro_confirmados'),
 ]
+
+

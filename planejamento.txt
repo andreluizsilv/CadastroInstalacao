@@ -1,0 +1,41 @@
+Obtetivo:
+    Automatizar preenchimento de formularios Web/Excel com calculos.
+    Linguagem: Pyton com Django e Bootstrap5.
+
+Conteudo:
+    - Home
+        * Base de cadastramento
+            Formulario:
+                Numero do Pedido, Nome do Vendedor,
+        * base de calculo
+            Formulario com apenas 1 altenativa para a base de Calculo:
+                Metragem Inteira, Metragem Somadas, Metragem de Serviço Wave ou Taxa
+
+    - Pagina par ver o Cadastrado
+        * Salvar em um Banco de dados
+        * Deletar o cadastro
+
+    - Pagina para ver Todos os Cadastrados
+
+
+    - Pagina par ver os Cadastrado por Datas
+       * Pegar os dados e jogar em uma planilha do Exel
+
+Serviços:
+    1- Prepar o ambiente virtual. ok
+    2- Instalar o Django. ok
+    3- Subir o app. ok
+    4- Pagina Home.
+        a. formulario(Numero do Pedido, Nome da Vendedor). ok
+        b. Formulario para a base de Calculo:
+            (Metragem Inteira, Metragem Somadas, Metragem de Serviço Wave ou Taxa). ok
+        c. Tornar o formulario interativo(Quando for preecher algum input do formulario tornar os demais apagador)
+    5- Base de calculo(Metragens)
+    6- Pagina de Cadastrado
+        a. Pegar os dados da Home. ok
+        b. Botões com salvar e Deletar. ok
+    7- Pagina de todos os Cadastrados. ok
+    8- Pegar os dados do Banco de Dados por Data
+    9 - Jogar em Uma Planilha Exel.
+    10 - Fazer um Deploy
+

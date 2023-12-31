@@ -6,6 +6,7 @@
         <table class="table table-success table-striped">
             <thead>
                 <tr>
+					<th scope="col">Data</th>
                     <th scope="col">Item</th>
                     <th scope="col">Pedido</th>
                     <th scope="col">Vendedor</th>
@@ -17,7 +18,8 @@
             <tbody>
                 {% for instalacao in cadastros %}
                     <tr>
-                        <th scope="row">{{ instalacao.id_instalacoes }}</th>
+                        <th>{{ instalacao.data_criacao }}</th>
+                        <th>{{ instalacao.id_instalacoes }}</th>
                         <td>{{ instalacao.pedido }}</td>
                         <td>{{ instalacao.vendedor }}</td>
                         <td>{{ instalacao.metragem }}</td>

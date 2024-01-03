@@ -1,5 +1,4 @@
 #CadastroInstalacao
-#Cadastrar Instalações 
 #Automação usando Python, Django, Bootstrap, Excel
 #Principio
   #Preencher uma planilha no HTML: 

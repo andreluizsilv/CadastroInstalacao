@@ -1,0 +1,13 @@
+{
+  "builds": [{
+    "src": "projeto_cad_instalacao/wsgi.py",
+    "user": "@vercel/python",
+    "config": {"maxLambdaSize":  "15mb", "runtime": "pythom3.10"},
+  }],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "projeto_cad_instalacao/wsgi.py"
+    }
+  ]
+}

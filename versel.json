@@ -1,10 +1,22 @@
 {
-  "builds": [{
-    "src": "projeto_cad_instalacao/wsgi.py",
-    "user": "@vercel/python",
-    "config": {"maxLambdaSize":  "15mb", "runtime": "pythom3.10"},
-  }],
+  "version": 2,
+  "builds": [
+    {
+      "src": "projeto_cad_instalacao/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.10"
+      }
+    }
+  ],
   "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/static/(.*)",
+      "dest": "templates/static/$1",
+      "cleanUrls": false
+    },
     {
       "src": "/(.*)",
       "dest": "projeto_cad_instalacao/wsgi.py"

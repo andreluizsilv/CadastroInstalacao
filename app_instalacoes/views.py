@@ -65,9 +65,16 @@ def salvar_cadastro(request):
     if request.method == "POST":
         pedido = int(request.POST.get('pedido'))
         vendedor = str(request.POST.get('vendedor'))
-        metragem = float(request.POST.get('metragem'))
-        valor_unitario = float(request.POST.get('valor_unitario'))
-        valor_total = float(request.POST.get('valor_total'))
+
+        # Substituir vírgulas por pontos antes de converter para float
+        metragem_str = request.POST.get('metragem').replace(',', '.')
+        valor_unitario_str = request.POST.get('valor_unitario').replace(',', '.')
+        valor_total_str = request.POST.get('valor_total').replace(',', '.')
+
+        # Converter strings para floats
+        metragem = float(metragem_str)
+        valor_unitario = float(valor_unitario_str)
+        valor_total = float(valor_total_str)
 
         # Salvar instalação no Banco de dados
         cadastro_instalacao = Instalacao(
@@ -80,7 +87,9 @@ def salvar_cadastro(request):
 
         cadastro_instalacao.save()
 
-        return redirect('home')  # Redirecione para a página inicial ou para onde desejar
+        return redirect('home')
+
+
 def inst_cadastradas(request):
     cadastros = Instalacao.objects.all()
     return render(request, 'pedido_cadastrados.html', {'cadastros': cadastros})
